@@ -66,7 +66,7 @@ const translations = {
     'modal-fallback-text': 'Bu video sayfaya gömülü oynatılamıyor.',
     'modal-yt-btn':        'YouTube\'da İzle',
 
-    'footer-copy': '© 2024 Murat Gönüllü. Tüm hakları saklıdır.',
+    'footer-copy': '© 2026 Murat Gönüllü. Tüm hakları saklıdır.',
   },
 
   en: {
@@ -133,7 +133,7 @@ const translations = {
     'modal-fallback-text': 'This video cannot be embedded in the page.',
     'modal-yt-btn':        'Watch on YouTube',
 
-    'footer-copy': '© 2024 Murat Gönüllü. All rights reserved.',
+    'footer-copy': '© 2026 Murat Gönüllü. All rights reserved.',
   }
 };
 

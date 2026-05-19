@@ -854,8 +854,7 @@ section[id] {
 
 .vc-card {
   display: flex;
-  align-items: center;
-  gap: 0;
+  flex-direction: column;
   cursor: pointer;
   background: rgba(0,0,0,0.3);
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -868,10 +867,8 @@ section[id] {
 
 .vc-thumb {
   position: relative;
-  flex-shrink: 0;
-  width: 160px;
-  height: 100%;
-  min-height: 90px;
+  width: 100%;
+  aspect-ratio: 16/9;
   overflow: hidden;
 }
 
@@ -894,11 +891,11 @@ section[id] {
   transition: opacity 0.3s;
 }
 
-.vc-play svg { width: 28px; height: 28px; }
+.vc-play svg { width: 36px; height: 36px; }
 .vc-card:hover .vc-play { opacity: 1; }
 
 .vc-info {
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   flex: 1;
 }
 
