@@ -412,51 +412,9 @@ style.textContent = `
 document.head.appendChild(style);
 
 // ============================
-// CONTACT FORM — Formsubmit AJAX
+// CONTACT FORM 
+// Formsubmit native fallback to ensure activation link works
 // ============================
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const btn  = form.querySelector('.submit-btn');
-  const span = btn.querySelector('span');
-  const originalText = span.textContent;
-
-  btn.disabled = true;
-  span.textContent = '...';
-
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
-    });
-
-    if (res.ok) {
-      span.textContent = translations[currentLang]['form-sent'] || 'Gönderildi ✓';
-      btn.style.background = '#2a7a2a';
-      btn.style.color = '#fff';
-      form.reset();
-      setTimeout(() => {
-        span.textContent = originalText;
-        btn.style.background = '';
-        btn.style.color = '';
-        btn.disabled = false;
-      }, 4000);
-    } else {
-      throw new Error('failed');
-    }
-  } catch {
-    span.textContent = '✕ Hata oluştu';
-    btn.style.background = '#7a2a2a';
-    btn.style.color = '#fff';
-    setTimeout(() => {
-      span.textContent = originalText;
-      btn.style.background = '';
-      btn.style.color = '';
-      btn.disabled = false;
-    }, 3000);
-  }
-});
 
 
 // ============================
