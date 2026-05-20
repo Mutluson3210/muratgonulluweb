@@ -244,11 +244,20 @@ window.onYouTubeIframeAPIReady = function () {
 };
 
 function createPlayer(videoId) {
-  // Destroy existing player
-  if (ytPlayer) { ytPlayer.destroy(); ytPlayer = null; }
+  // If player already exists, just load the new video to save resources and prevent DOM issues
+  if (ytPlayer && typeof ytPlayer.loadVideoById === 'function') {
+    modalFallback.style.display = 'none';
+    ytPlayer.loadVideoById(videoId);
+    return;
+  }
 
-  // Ensure the target div exists (YT.Player replaces it)
-  const wrap = document.getElementById('yt-player');
+  // Ensure the target div exists
+  let wrap = document.getElementById('yt-player');
+  if (!wrap) {
+    wrap = document.createElement('div');
+    wrap.id = 'yt-player';
+    document.querySelector('.modal-video-wrap').prepend(wrap);
+  }
   wrap.innerHTML = '';
   modalFallback.style.display = 'none';
 
@@ -268,7 +277,6 @@ function createPlayer(videoId) {
 
 function showFallback(videoId) {
   if (ytPlayer) { ytPlayer.destroy(); ytPlayer = null; }
-  document.getElementById('yt-player').innerHTML = '';
   modalYtLink.href = `https://www.youtube.com/watch?v=${videoId}`;
   modalFallback.style.display = 'flex';
 }
@@ -281,6 +289,10 @@ function openModal(videoId, title, artist) {
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 
+  if (window.YT && window.YT.Player) {
+    ytApiReady = true;
+  }
+
   if (ytApiReady) {
     createPlayer(videoId);
   } else {
@@ -291,9 +303,9 @@ function openModal(videoId, title, artist) {
 function closeModal() {
   modal.classList.remove('active');
   document.body.style.overflow = '';
-  if (ytPlayer) { ytPlayer.destroy(); ytPlayer = null; }
-  const wrap = document.getElementById('yt-player');
-  if (wrap) wrap.innerHTML = '';
+  if (ytPlayer && typeof ytPlayer.stopVideo === 'function') {
+    ytPlayer.stopVideo();
+  }
   modalFallback.style.display = 'none';
 }
 
