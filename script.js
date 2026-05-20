@@ -411,10 +411,53 @@ style.textContent = `
 document.head.appendChild(style);
 
 // ============================
-// CONTACT FORM 
-// Formsubmit native fallback to ensure activation link works
+// CONTACT FORM - Web3Forms AJAX
 // ============================
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = form.querySelector('.submit-btn');
+  const span = btn.querySelector('span');
+  const originalText = span.textContent;
 
+  btn.disabled = true;
+  span.textContent = '...';
+
+  try {
+    const formData = new FormData(form);
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: formData
+    });
+
+    const data = await res.json();
+
+    if (res.ok && data.success) {
+      span.textContent = translations[currentLang]['form-sent'] || 'Gönderildi ✓';
+      btn.style.background = '#2a7a2a';
+      btn.style.color = '#fff';
+      form.reset();
+      setTimeout(() => {
+        span.textContent = originalText;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
+      }, 4000);
+    } else {
+      throw new Error(data.message || 'failed');
+    }
+  } catch (error) {
+    span.textContent = '✕ Hata oluştu';
+    btn.style.background = '#7a2a2a';
+    btn.style.color = '#fff';
+    setTimeout(() => {
+      span.textContent = originalText;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.disabled = false;
+    }, 3000);
+  }
+});
 
 // ============================
 // CUSTOM CURSOR (desktop only)
