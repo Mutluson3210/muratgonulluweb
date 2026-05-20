@@ -15,9 +15,8 @@ const translations = {
 
     'about-label': 'Biyografi',
     'about-title': 'Görüntünün<br/><em>Şairine Dair</em>',
-    'about-p1': '1973 yılında Denizli\'de doğan Murat Gönüllü, kariyerine <strong>NTV</strong> bünyesinde adım atarak Türkiye\'nin önde gelen medya kuruluşlarında kendini kanıtladı.',
-    'about-p2': '2001 yılında Benetton\'un dünyaca ünlü reklam fotoğrafçısı <strong>Oliviero Toscani</strong>\'nin kurduğu <strong>Benetton FABRICA</strong> projesinin Video-Sinema bölümüne kabul edilerek İtalya\'ya yerleşti. İtalya\'da geçirdiği 9 yıl boyunca Milano ve İstanbul ekseninde çok sayıda müzik klibinin yönetmenliğini üstlendi; uluslararası sanat sahnesinde güçlü bir kimlik oluşturdu.',
-    'about-p3': 'Sanat kariyerinin yanı sıra akademiye ilgi duyan Gönüllü, 2019\'da <strong>İstanbul Üniversitesi</strong> Sosyoloji bölümünden Yüksek Onur Öğrencisi olarak mezun oldu; 2023\'te ise <strong>Ondokuz Mayıs Üniversitesi</strong>\'nde Siyaset Bilimi ve Kamu Yönetimi alanında yüksek lisansını tamamladı.',
+    'about-p2': '2001 yılında Benetton\'un dünyaca ünlü reklam fotoğrafçısı <strong>Oliviero Toscani</strong>\'nin kurduğu <strong>Benetton FABRICA</strong> projesinin Video-Sinema bölümüne kabul edilerek İtalya\'ya yerleşti. İtalya\'da geçirdiği 9 yıl boyunca Milano ve İstanbul ekseninde çok sayıda müzik klibinin yönetmenliğini üstlendi.',
+    'about-p3': 'Yönetmenlik kariyerinin yanı sıra akademiye ilgi duyan Gönüllü, 2019\'da <strong>İstanbul Üniversitesi</strong> Sosyoloji bölümünden Yüksek Onur Öğrencisi olarak mezun oldu; 2023\'te ise <strong>Ondokuz Mayıs Üniversitesi</strong>\'nde Siyaset Bilimi ve Kamu Yönetimi alanında yüksek lisansını tamamladı.',
     'about-p4': 'Bugün USPUM gibi düşünce kuruluşlarında strateji geliştirme çalışmaları yürüten Gönüllü, toplumsal fayda odaklı pek çok STK ile iş birliği içinde çalışmaya devam etmektedir.',
     'stat-italy':   'Yıl İtalya\'da',
     'stat-videos':  'Müzik Videosu',
@@ -39,7 +38,7 @@ const translations = {
     'desc-ibrahim':  'İbrahim Kadıoğlu için yönetilen müzik videosu.',
 
     'mutluson-label': 'Müzik Projesi',
-    'mutluson-p1': '<em>Mutluson</em>, sevgi, farkındalık ve yaşam enerjisi üzerine kurulu bir pop projesidir. Pop, soul ve dans müziğini iç keşif, umut ve birliktelik temalarıyla harmanlayan bu proje; dinleyiciyi hem müzikal hem de duygusal bir yolculuğa çıkarır.',
+    'mutluson-p1': '<em>Mutluson</em>, sevgi, farkındalık ve yaşam enerjisi üzerine kurulu bir yapay zeka pop projesidir. Pop, soul ve dans müziğini iç keşif, umut ve birliktelik temalarıyla harmanlayan bu proje; dinleyiciyi hem müzikal hem de duygusal bir yolculuğa çıkarır.',
     'mutluson-p2': 'Murat Gönüllü\'nün sanatçı kimliğinin en özgün yansımalarından biri olan Mutluson, modern müziğin dilini samimi bir lirizm ile buluşturur.',
 
     'sufisoul-label': 'DJ · Prodüktör',
@@ -83,8 +82,8 @@ const translations = {
     'about-label': 'Biography',
     'about-title': 'About the<br/><em>Poet of Images</em>',
     'about-p1': 'Born in Denizli in 1973, Murat Gönüllü began his career at <strong>NTV</strong>, establishing himself at one of Turkey\'s leading media organisations.',
-    'about-p2': 'In 2001, he was accepted into the Video-Cinema department of the <strong>Benetton FABRICA</strong> project — founded by world-renowned advertising photographer <strong>Oliviero Toscani</strong> — and relocated to Italy. Over nine years between Milan and Istanbul, he directed numerous music videos, forging a strong identity on the international art scene.',
-    'about-p3': 'Alongside his artistic career, Gönüllü pursued academia, graduating with High Honours from <strong>Istanbul University</strong>\'s Sociology department in 2019, then completing his Master\'s in Political Science and Public Administration at <strong>Ondokuz Mayıs University</strong> in 2023.',
+    'about-p2': 'In 2001, he was accepted into the Video-Cinema department of the <strong>Benetton FABRICA</strong> project — founded by world-renowned advertising photographer <strong>Oliviero Toscani</strong> — and relocated to Italy. Over nine years between Milan and Istanbul, he directed numerous music videos.',
+    'about-p3': 'Alongside his directing career, Gönüllü pursued academia, graduating with High Honours from <strong>Istanbul University</strong>\'s Sociology department in 2019, then completing his Master\'s in Political Science and Public Administration at <strong>Ondokuz Mayıs University</strong> in 2023.',
     'about-p4': 'Today he continues strategy and policy development work at think tanks such as USPUM, collaborating with numerous NGOs focused on social benefit.',
     'stat-italy':   'Years in Italy',
     'stat-videos':  'Music Videos',
@@ -106,7 +105,7 @@ const translations = {
     'desc-ibrahim':  'Music video directed for İbrahim Kadıoğlu.',
 
     'mutluson-label': 'Music Project',
-    'mutluson-p1': '<em>Mutluson</em> is a pop project built around love, awareness and life energy. Blending pop, soul and dance music with themes of inner journey, hope and unity, it takes the listener on both a musical and emotional voyage.',
+    'mutluson-p1': '<em>Mutluson</em> is an AI pop project built around love, awareness and life energy. Blending pop, soul and dance music with themes of inner journey, hope and unity, it takes the listener on both a musical and emotional voyage.',
     'mutluson-p2': 'One of the most authentic expressions of Murat Gönüllü\'s artistic identity, Mutluson brings the language of contemporary music together with genuine lyricism.',
 
     'sufisoul-label': 'DJ · Producer',
