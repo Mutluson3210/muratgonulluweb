@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Bizim STAR Finalist Kartı</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: 148mm 210mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 148mm; height: 210mm; background: #0d1033; }
+  body { font-family: 'Poppins', sans-serif; color: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .card {
+    position: relative; width: 148mm; height: 210mm; overflow: hidden;
+    padding: 7mm 9mm 6mm;
+    display: flex; flex-direction: column; align-items: center;
+    background:
+      radial-gradient(ellipse 70% 40% at 50% 0%, rgba(255,214,90,.28), transparent 70%),
+      radial-gradient(circle at 0% 60%, rgba(14,139,216,.35), transparent 45%),
+      radial-gradient(circle at 100% 75%, rgba(255,51,51,.28), transparent 45%),
+      linear-gradient(180deg, #1a1450 0%, #0d1033 55%, #0a0c26 100%);
+  }
+  /* ışık hüzmeleri */
+  .card::before {
+    content: ""; position: absolute; inset: -20mm -30mm auto; height: 120mm;
+    background:
+      conic-gradient(from 160deg at 50% 0%, transparent 0deg, rgba(255,255,255,.07) 8deg, transparent 16deg,
+        transparent 22deg, rgba(255,255,255,.06) 28deg, transparent 34deg,
+        transparent 40deg, rgba(255,255,255,.05) 46deg, transparent 52deg);
+    pointer-events: none;
+  }
+  /* yıldız tozu */
+  .stars { position: absolute; inset: 0; pointer-events: none; }
+  .stars i { position: absolute; color: #ffd65a; font-style: normal; line-height: 1; opacity: .85; }
+
+  /* ince altın çerçeve */
+  .frame { position: absolute; inset: 4mm; border: .5mm solid rgba(255,214,90,.55); border-radius: 5mm; pointer-events: none; }
+  .frame::after { content: ""; position: absolute; inset: 1.2mm; border: .25mm solid rgba(255,214,90,.25); border-radius: 4mm; }
+
+  .content { position: relative; z-index: 1; width: 100%; display: flex; flex-direction: column; align-items: center; height: 100%; }
+
+  .fest-logo { width: 42mm; filter: drop-shadow(0 2mm 4mm rgba(0,0,0,.45)); }
+
+  .badge {
+    margin-top: 1mm;
+    font-family: 'Poppins'; font-weight: 600; font-size: 8pt; letter-spacing: 3.2pt; text-transform: uppercase;
+    color: #0d1033; background: linear-gradient(90deg, #ffd65a, #f7a20f);
+    padding: 1.2mm 5mm; border-radius: 10mm;
+  }
+
+  .title {
+    margin-top: 2.5mm; font-family: 'Baloo 2', sans-serif; font-weight: 800; line-height: .9;
+    font-size: 36pt; text-align: center; letter-spacing: .5pt;
+  }
+  .title .bizim { color: #fff; }
+  .title .star {
+    background: linear-gradient(180deg, #fff3b0 0%, #ffd65a 40%, #f39c12 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 .6mm 0 #b35c00);
+  }
+  .subtitle { margin-top: 1mm; font-size: 10pt; font-weight: 500; letter-spacing: 2.5pt; text-transform: uppercase; color: #cfd6ff; }
+
+  .congrats { margin-top: 2.5mm; text-align: center; font-size: 9pt; line-height: 1.45; color: #e7eaff; max-width: 112mm; }
+  .congrats b { color: #ffd65a; font-weight: 600; }
+
+  .section-head { margin-top: 3mm; display: flex; align-items: center; gap: 3mm; width: 100%; }
+  .section-head::before, .section-head::after { content: ""; flex: 1; height: .3mm; background: linear-gradient(90deg, transparent, rgba(255,214,90,.7)); }
+  .section-head::after { background: linear-gradient(90deg, rgba(255,214,90,.7), transparent); }
+  .section-head span { font-family: 'Baloo 2'; font-weight: 700; font-size: 14pt; color: #ffd65a; letter-spacing: 1pt; }
+
+  .prizes { margin-top: 2.5mm; width: 100%; display: flex; flex-direction: column; gap: 2.2mm; }
+  .prize {
+    display: flex; align-items: center; gap: 4mm;
+    padding: 2mm 4mm 2mm 3mm; border-radius: 4mm;
+    background: rgba(255,255,255,.06);
+    border: .35mm solid rgba(255,255,255,.14);
+  }
+  .medal {
+    flex: none; width: 15mm; height: 15mm; border-radius: 50%;
+    display: grid; place-items: center; position: relative;
+    font-family: 'Baloo 2'; font-weight: 800; color: #fff; text-shadow: 0 .4mm 0 rgba(0,0,0,.25);
+    box-shadow: inset 0 -1mm 0 rgba(0,0,0,.18), 0 1mm 2.5mm rgba(0,0,0,.35);
+  }
+  .medal b { font-size: 22pt; line-height: 1; margin-top: .8mm; }
+  .medal::after { content: ""; position: absolute; inset: 1.2mm; border-radius: 50%; border: .35mm dashed rgba(255,255,255,.55); }
+
+  .p1 .medal { background: radial-gradient(circle at 35% 30%, #fff1a8, #f7b500 55%, #c98400); }
+  .p2 .medal { background: radial-gradient(circle at 35% 30%, #ffffff, #c7cfdb 55%, #8f99a8); color: #2b3446; text-shadow: none; }
+  .p3 .medal { background: radial-gradient(circle at 35% 30%, #ffd2a6, #d9822b 55%, #9c5115); }
+  .p1 { background: linear-gradient(90deg, rgba(255,214,90,.22), rgba(255,255,255,.05)); border-color: rgba(255,214,90,.55); }
+
+  .prize-info { flex: 1; }
+  .rank { font-size: 7.5pt; font-weight: 600; letter-spacing: 2pt; text-transform: uppercase; color: #aab4ee; }
+  .amount { font-family: 'Baloo 2'; font-weight: 800; font-size: 23pt; line-height: 1; margin-top: .6mm; }
+  .amount em { font-style: normal; font-size: 14pt; margin-left: 1mm; color: #ffd65a; }
+  .p1 .amount { font-size: 27pt; }
+  .extra { margin-top: .9mm; font-size: 9pt; font-weight: 500; color: #fff; display: flex; align-items: center; gap: 1.6mm; }
+  .extra .plus {
+    flex: none; width: 4.4mm; height: 4.4mm; border-radius: 50%; display: grid; place-items: center;
+    background: #ff3333; font-weight: 700; font-size: 9pt; line-height: 1;
+  }
+
+  .sponsors { margin-top: 3mm; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; }
+  .sponsor { text-align: center; padding: 2.2mm 2mm; border-radius: 3mm; background: rgba(13,16,51,.6); border: .3mm solid rgba(255,255,255,.18); }
+  .sponsor .lbl { font-size: 6.5pt; letter-spacing: 2pt; font-weight: 600; color: #ffd65a; text-transform: uppercase; }
+  .sponsor .name { margin-top: .4mm; font-family: 'Baloo 2'; font-weight: 700; font-size: 13pt; line-height: 1.1; }
+
+  .footer { margin-top: auto; width: 100%; display: flex; align-items: center; justify-content: center; gap: 3mm; }
+  .dernek-logo { width: 15mm; height: 15mm; border-radius: 50%; background: #fff; padding: .6mm; object-fit: contain; box-shadow: 0 .8mm 2mm rgba(0,0,0,.4); }
+  .footer p { font-size: 6.8pt; line-height: 1.35; color: #c4cbf5; text-align: left; }
+  .footer p b { display: block; color: #fff; font-weight: 600; font-size: 7.4pt; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="stars" aria-hidden="true">
+    <i style="top:9mm;left:12mm;font-size:9pt">✦</i>
+    <i style="top:22mm;left:20mm;font-size:5pt;opacity:.6">✦</i>
+    <i style="top:14mm;right:13mm;font-size:11pt">✦</i>
+    <i style="top:30mm;right:22mm;font-size:5pt;opacity:.6">✦</i>
+    <i style="top:52mm;left:10mm;font-size:6pt;opacity:.5">✦</i>
+    <i style="top:58mm;right:9mm;font-size:7pt;opacity:.55">✦</i>
+    <i style="bottom:44mm;left:7mm;font-size:5pt;opacity:.4">✦</i>
+    <i style="bottom:52mm;right:7mm;font-size:6pt;opacity:.4">✦</i>
+  </div>
+  <div class="frame"></div>
+
+  <div class="content">
+    <img class="fest-logo" src="bizimkent-fest-logo.png" alt="Bizimkent Fest">
+    <div class="badge">Finalist Kartı</div>
+
+    <h1 class="title"><span class="bizim">Bizim</span> <span class="star">STAR</span></h1>
+    <div class="subtitle">Ses Yarışması</div>
+
+    <p class="congrats">Tebrikler! Sahnede sesini duyuran <b>finalistlerimizden</b> birisin. Büyük finalde seni bekleyen ödüller:</p>
+
+    <div class="section-head"><span>Ödüller</span></div>
+
+    <div class="prizes">
+      <div class="prize p1">
+        <div class="medal"><b>1</b></div>
+        <div class="prize-info">
+          <div class="rank">Birinciye</div>
+          <div class="amount">12.000<em>TL</em></div>
+          <div class="extra"><span class="plus">+</span>1 single için stüdyo kaydı</div>
+        </div>
+      </div>
+      <div class="prize p2">
+        <div class="medal"><b>2</b></div>
+        <div class="prize-info">
+          <div class="rank">İkinciye</div>
+          <div class="amount">6.000<em>TL</em></div>
+          <div class="extra"><span class="plus">+</span>1 gece konaklamalı 2 günlük gezi</div>
+        </div>
+      </div>
+      <div class="prize p3">
+        <div class="medal"><b>3</b></div>
+        <div class="prize-info">
+          <div class="rank">Üçüncüye</div>
+          <div class="amount">3.000<em>TL</em></div>
+          <div class="extra"><span class="plus">+</span>Günübirlik tur</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sponsors">
+      <div class="sponsor"><div class="lbl">Gezi Sponsoru</div><div class="name">Manzaracı Tur</div></div>
+      <div class="sponsor"><div class="lbl">Stüdyo Sponsoru</div><div class="name">Varol Kandemir</div></div>
+    </div>
+
+    <div class="footer">
+      <img class="dernek-logo" src="bizimkent-dernek-logo.jpg" alt="Bizimkent Derneği logosu">
+      <p><b>Bizimkent Eğitim Kültür Çevre Koruma</b>ve Güzelleştirme Derneği</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
