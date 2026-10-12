@@ -289,9 +289,11 @@ function showFallback(videoId) {
   modalFallback.style.display = 'flex';
 }
 
-function openModal(videoId, title, artist) {
+function openModal(videoId, title, artist, lang) {
   modalTitle.textContent  = title  || '';
   modalArtist.textContent = artist || '';
+  // English names: keep uppercase "I" instead of Turkish "İ"
+  if (lang) modalArtist.lang = lang; else modalArtist.removeAttribute('lang');
   modalYtLink.href = `https://www.youtube.com/watch?v=${videoId}`;
   modalFallback.style.display = 'none';
   modal.classList.add('active');
@@ -324,12 +326,12 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal
 // Wire up cards
 document.querySelectorAll('.work-card[data-vid]').forEach(card => {
   card.addEventListener('click', () =>
-    openModal(card.dataset.vid, card.dataset.title, card.dataset.artist));
+    openModal(card.dataset.vid, card.dataset.title, card.dataset.artist, card.dataset.lang));
 });
 
 document.querySelectorAll('.vc-card[data-vid]').forEach(card => {
   card.addEventListener('click', () =>
-    openModal(card.dataset.vid, card.dataset.title, card.dataset.artist));
+    openModal(card.dataset.vid, card.dataset.title, card.dataset.artist, card.dataset.lang));
 });
 
 // ============================
