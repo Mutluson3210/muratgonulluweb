@@ -22,6 +22,10 @@ const translations = {
     'stat-videos':  'Müzik Videosu',
     'stat-masters': 'Yüksek Lisans',
 
+    'ads-title':   'Reklam<br/><em>Filmleri</em>',
+    'ads-sub':     'KARACA markası için yönetilen reklam filmleri.',
+    'cat-ad':      'Reklam Filmi',
+    'desc-karaca': 'KARACA markası için yönetilen reklam filmleri.',
     'works-title': 'Müzik<br/><em>Videoları</em>',
     'works-sub':   'Ajda Pekkan, Sezen Aksu, Gülşen, Mirkelam ve daha fazlası — yönetmenlik kariyerinden seçilmiş klipler.',
     'cat-mv':      'Müzik Videosu',
@@ -89,6 +93,10 @@ const translations = {
     'stat-videos':  'Music Videos',
     'stat-masters': 'Master\'s Degree',
 
+    'ads-title':   'Commercial<br/><em>Films</em>',
+    'ads-sub':     'Commercials directed for the KARACA brand.',
+    'cat-ad':      'Commercial',
+    'desc-karaca': 'Commercials directed for the KARACA brand.',
     'works-title': 'Music<br/><em>Videos</em>',
     'works-sub':   'Ajda Pekkan, Sezen Aksu, Gülşen, Mirkelam and more — selected clips from a directing career.',
     'cat-mv':      'Music Video',
