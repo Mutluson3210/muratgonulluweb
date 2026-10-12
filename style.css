@@ -611,9 +611,10 @@ body.theme-light .icon-moon { display: none; }
   transition: transform 0.4s var(--ease);
 }
 
-.work-card.featured {
-  grid-column: span 2;
-}
+/* Music videos: 6-col grid — top row two equal featured cards, then rows of three */
+.mv-grid { grid-template-columns: repeat(6, 1fr); }
+.mv-grid .work-card { grid-column: span 2; }
+.mv-grid .work-card.featured { grid-column: span 3; }
 
 .ads-grid {
   grid-template-columns: 1fr !important;
@@ -1167,7 +1168,8 @@ section[id] {
   .about-image-wrap { position: static; }
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .works-grid { grid-template-columns: repeat(2, 1fr); }
-  .work-card.featured { grid-column: span 2; }
+  .mv-grid .work-card,
+  .mv-grid .work-card.featured { grid-column: span 1; }
 }
 
 @media (max-width: 768px) {
@@ -1211,7 +1213,6 @@ section[id] {
   .vc-thumb { width: 100%; min-height: auto; }
 
   .works-grid { grid-template-columns: 1fr; }
-  .work-card.featured { grid-column: span 1; }
 
   .form-row { grid-template-columns: 1fr; }
 
