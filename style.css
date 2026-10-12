@@ -615,6 +615,16 @@ body.theme-light .icon-moon { display: none; }
   grid-column: span 2;
 }
 
+.ads-grid {
+  grid-template-columns: 1fr !important;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.works-mv-title {
+  margin-top: 6rem;
+}
+
 .work-thumb {
   position: relative;
   aspect-ratio: 16/9;
