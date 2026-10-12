@@ -4,8 +4,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans:  'Inter', system-ui, sans-serif;
+  --font-serif:  'Bricolage Grotesque', system-ui, sans-serif; /* başlıklar */
+  --font-sans:   'Manrope', system-ui, sans-serif;             /* metin */
+  --font-accent: 'Instrument Serif', Georgia, serif;           /* altın italik vurgular */
   --ease:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --gold:    #c9a96e;
@@ -1229,3 +1230,22 @@ section[id] {
   .about-stats { grid-template-columns: repeat(3, 1fr); }
   .stat-num { font-size: 2rem; }
 }
+
+/* ============================
+   MODERN TYPOGRAPHY
+   ============================ */
+.hero-title,
+.section-title,
+.project-title { letter-spacing: -0.035em; }
+
+.title-last,
+.section-title em,
+.project-body em {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.project-body em { font-size: 1.15em; }
+
+.hero-tagline { font-family: var(--font-sans); }
